@@ -13,6 +13,10 @@ if [ ! -z ${PROFILE+x} ] ; then
 fi
 
 if [ ! -z ${BOOT+x} ] ; then
+
+    echo "mvn versions:update-parent -DgenerateBackupPoms=false -DallowSnapshots=true -DparentVersion=\"[${BOOT}]\""
+    echo
+
     mvn versions:update-parent -DgenerateBackupPoms=false -DallowSnapshots=true -DparentVersion="[${BOOT}]"
 fi
 
