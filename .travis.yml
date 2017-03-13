@@ -1,0 +1,35 @@
+language: java
+
+jdk:
+  - oraclejdk8
+
+env:
+  matrix:
+    - DATA=Ingalls-BUILD-SNAPSHOT
+    - BOOT=1.5.3.BUILD-SNAPSHOT
+    - BOOT=1.5.3.BUILD-SNAPSHOT DATA=Ingalls-BUILD-SNAPSHOT
+    - PROFILE=spring5
+
+addons:
+  apt:
+    packages:
+    - oracle-java8-installer
+
+services:
+  - redis-server
+
+cache:
+  directories:
+    - $HOME/.m2
+
+sudo: false
+
+before_install:
+  - sed -i.bak -e 's|https://nexus.codehaus.org/snapshots/|https://oss.sonatype.org/content/repositories/codehaus-snapshots/|g' ~/.m2/settings.xml
+
+
+install: true
+
+script:
+ - git clone https://github.com/spring-projects/spring-data-examples.git
+ - ./run.sh
