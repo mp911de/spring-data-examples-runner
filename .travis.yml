@@ -6,8 +6,8 @@ jdk:
 env:
   matrix:
     - DATA=Ingalls-BUILD-SNAPSHOT
-    - BOOT=1.5.4.BUILD-SNAPSHOT
-    - BOOT=1.5.4.BUILD-SNAPSHOT DATA=Ingalls-BUILD-SNAPSHOT
+    - BOOT=1.5.7.BUILD-SNAPSHOT
+    - BOOT=1.5.7.BUILD-SNAPSHOT DATA=Ingalls-BUILD-SNAPSHOT
     - PROFILE=spring5
 
 addons:
