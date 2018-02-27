@@ -4,10 +4,6 @@ MVN_ARGS=""
 
 cd spring-data-examples
 
-if [ ! -z ${DATA+x} ] ; then
-  MVN_ARGS="${MVN_ARGS} -Dspring-data-releasetrain.version=${DATA} -pl !mongodb/reactive,!cassandra/reactive,!redis/reactive"
-fi
-
 if [ ! -z ${PROFILE+x} ] ; then
   MVN_ARGS="${MVN_ARGS} -P${PROFILE}"
 fi
