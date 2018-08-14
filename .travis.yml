@@ -40,12 +40,9 @@ cache:
 
 sudo: false
 
-before_install:
-  - sed -i.bak -e 's|https://nexus.codehaus.org/snapshots/|https://oss.sonatype.org/content/repositories/codehaus-snapshots/|g' ~/.m2/settings.xml
-
-
 install: true
 
 script:
  - git clone https://github.com/spring-projects/spring-data-examples.git
+ - cp -f settings.xml $HOME/.m2/settings.xml
  - ./run.sh
